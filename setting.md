@@ -47,7 +47,8 @@ set protocols bgp neighbor <相手IP> address-family ipv4-unicast
 ---
 
 # other
-^^^
+---
+
 set interfaces ethernet eth0 pppoe 0 user-id 'user@example'
 set interfaces ethernet eth0 pppoe 0 password 'password'
 set interfaces ethernet eth0 pppoe 0 default-route auto
@@ -58,4 +59,5 @@ set protocols bgp parameters router-id 192.0.2.1
 set protocols bgp neighbor 203.0.113.1 remote-as 65000
 set protocols bgp address-family ipv4-unicast
 set protocols bgp neighbor 203.0.113.1 address-family ipv4-unicast
-^^^
+
+---
