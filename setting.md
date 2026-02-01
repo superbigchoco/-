@@ -68,3 +68,24 @@ set protocols bgp address-family ipv4-unicast
 set protocols bgp neighbor 203.0.113.1 address-family ipv4-unicast
 
 ---
+
+## client(PPPoE)
+
+---
+
+set interfaces ethernet eth0 pppoe 0 user-id 'testuser'
+
+set interfaces ethernet eth0 pppoe 0 password 'testpass'
+
+set interfaces ethernet eth0 pppoe 0 default-route auto
+
+---
+
+---
+- set interfaces ethernet eth0 address '10.0.0.1/24'
+
+- set service pppoe-server interface eth0
+- set service pppoe-server authentication local-users username testuser password 'testpass'
+- set service pppoe-server client-ip-pool start '10.0.0.10'
+- set service pppoe-server client-ip-pool stop  '10.0.0.10'
+---
